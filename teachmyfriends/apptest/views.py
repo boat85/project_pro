@@ -9,3 +9,9 @@ def showindex(request):
   return render(request,'index.html',{'f':f})
 
 
+def addfriends(request):
+  return render(request,'addfriends.html')
+
+
+def insert(request):
+  return 
