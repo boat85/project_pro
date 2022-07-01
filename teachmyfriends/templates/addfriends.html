@@ -2,24 +2,27 @@
 
 {% block content %}
 
-<form action="/">
+<form action="/insertfriend" method="get">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">ชื่อ</div>
+    <label for="exampleInputEmail1" class="form-label">ชื่อ</label>
+    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="" class="form-text"></div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">เพศ</div>
+    <label for="exampleInputEmail1" class="form-label">เพศ</label>
+    <input type="text" class="form-control" name="sex" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="" class="form-text"></div>
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">รายละเอียด</div>
+    <label for="exampleInputEmail1" class="form-label">รายละเอียด</label>
+    <input type="text" class="form-control" name="detail" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="" class="form-text"></div>
   </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
 
 </form>
 

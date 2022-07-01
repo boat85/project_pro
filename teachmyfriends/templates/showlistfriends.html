@@ -3,7 +3,9 @@
 
 {% block content%}
 
-<table class="table">
+
+{{name}}
+<table class="table" style="padding-top:"5 px"; ">
   <thead >
     <tr>
       <th scope="col">ลำดับ</th>
@@ -18,7 +20,7 @@
       <th scope="row">1</th>
       <td>{{fr.name}}</td>
       <td>{{fr.sex}}</td>
-      <td>@{{fr.detail}}</td>
+      <td>{{fr.detail}}</td>
     </tr>
     {%endfor%}
   </tbody>
