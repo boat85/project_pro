@@ -20,5 +20,7 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apptest.urls')),
-     path('api/book/', views.TaskList.as_view()),
+    path('api/book/', views.BookList.as_view()),
+    path('api/book/<int:pk>', views.BookDetail.as_view()) 
+     
 ]
