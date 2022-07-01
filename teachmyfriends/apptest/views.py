@@ -17,9 +17,32 @@ def addfriends(request):
 
 def insertfriend(request):
   fr = friends()
-  fr.name = request.GET['name']
-  fr.sex = request.GET['sex']
-  fr.detail = request.GET['detail']
+  fr.name = request.POST['name']
+  fr.sex = request.POST['sex']
+  fr.detail = request.POST['detail']
   fr.save()
   return redirect('/showlistfr')
   
+def deletefr(request):
+  id = request.POST['id']
+  fr = friends.objects.get(id=id)
+  fr.delete()
+  return redirect('/showlistfr')
+
+
+def updatefrshow(request):
+  id = request.POST['id']
+  fr = friends.objects.get(id=id)
+  return render(request,'updatefr.html',{
+    'fr':fr
+  })
+  
+
+def updatefr(request):
+  id = request.POST['id']
+  fr = friends.objects.get(id=id)
+  fr.name = request.POST['name']
+  fr.sex = request.POST['sex']
+  fr.detail = request.POST['detail']
+  fr.save()
+  return redirect('/showlistfr')

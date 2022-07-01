@@ -3,8 +3,6 @@
 
 {% block content%}
 
-
-{{name}}
 <table class="table" style="padding-top:"5 px"; ">
   <thead >
     <tr>
@@ -12,17 +10,51 @@
       <th scope="col">ชื่อ</th>
       <th scope="col">เพศ</th>
       <th scope="col">รายละเอียด</th>
+      <th scope="col">จัดการ</th>
     </tr>
   </thead>
   <tbody>
     {%for fr in f%}
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{fr.id}}</th>
       <td>{{fr.name}}</td>
       <td>{{fr.sex}}</td>
       <td>{{fr.detail}}</td>
-    </tr>
+    
+
+    <td>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-3">
+      <form action="/updatefrshow" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{fr.id}}">
+        <button type="submit" class="btn btn-primary md-5">แก้ไข</button>
+      </form>
+    </div>
+
+
+    <div class="col-3">
+      <form action="/deletefr" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="id" value={{fr.id}}>
+        <button tepe="submit" class="btn btn-danger md-5" onclick="return confirm('คุณต้องการจะลบผู้ใช้ {{u.fname}} {{u.lname}} หรือไม่')">ลบ</i></button>
+      </form>
+      
+    </div>
+  </div>
+
+</td>
+
+</tr>
+
+
     {%endfor%}
+
+
+
+
+
   </tbody>
 </table>
 

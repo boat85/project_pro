@@ -2,26 +2,28 @@
 
 {% block content %}
 
-<form action="/insertfriend" method="post">
+<form action="/updatefr" method="post">
   {% csrf_token %}
+
+  
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">ชื่อ</label>
-    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="name" value="{{fr.name}}" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">เพศ</label>
-    <input type="text" class="form-control" name="sex" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="sex" value="{{fr.sex}}" d="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="" class="form-text"></div>
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">รายละเอียด</label>
-    <input type="text" class="form-control" name="detail" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="text" class="form-control" name="detail" value="{{fr.detail}}" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="" class="form-text"></div>
   </div>
-
+  <input type="hidden" name="id" value="{{fr.id}}">
   <button type="submit" class="btn btn-primary">Submit</button>
 
 
